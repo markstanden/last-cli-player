@@ -109,9 +109,18 @@ def lastfm_to_screen(last_track_info, last_similar):
 
     # As the information is held within dicts inside dicts, inside dicts
     # A little more complicated to get what we need
-    print('Track Title:\t', last_track_info['track']['name'])
-    print('Artist:\t\t', last_track_info['track']['artist']['name'])
-    print('From Album:\t', last_track_info['track']['album']['title'])
+    try:
+        print('Track Title:\t', last_track_info['track']['name'])
+    except:
+        pass
+    try:
+        print('Artist:\t\t', last_track_info['track']['artist']['name'])
+    except:
+        pass
+    try:
+        print('From Album:\t', last_track_info['track']['album']['title'])
+    except:
+        pass
     print()
 
     # The list is 100 tracks long by default, which is not in the spirit of
